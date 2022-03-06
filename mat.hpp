@@ -4,8 +4,10 @@
 #include <string>
 #include <exception>
 #include <iostream>
-namespace ariel {
-    std::string mat(int , int , char , char);
+#include <bits/stdc++.h>
+namespace ariel
+{
+    std::string mat(int, int, char, char);
 }
 
 #endif // EX1
