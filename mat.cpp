@@ -50,9 +50,13 @@ namespace ariel
         {
             for (size_t i = x; i < (a - x) && (a - x) > 0; ++i)
             {
-                // str[(i * width) + y] = first_char;
-                // str[(a * b) - 1 -  ((i * width) + y) ] = first_char;
-               
+                // because of test 7 21 i had to add this if statments and also the second statment
+        if ((((a * b) - 1 - ((i * width) + y) % width) >= (width / 2)) && ((((a * b) - 1 - ((i * width) + y) % width) % 2) == 0)) {
+                str[(a * b) - 1 - ((i * width) + y)] = first_char;
+            }
+            if (((((i * width) + y) % width) <= (width / 2)) && (((((i * width) + y) % width) % 2) == 0)) {
+                str[(i * width) + y] = first_char;
+            }
 
             }
     
@@ -60,8 +64,8 @@ namespace ariel
             {
                 if (x < a && j < b)
                 {
-                //    str[(x * width) + j] = first_char;
-                //    str[(a*b)-1 - ((x * width) + j) ] = first_char;
+                    str[(x * width) + j] = first_char;
+                    str[(a*b)-1 - ((x * width) + j) ] = first_char;
                 }
             }
             x += 2;
