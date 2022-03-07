@@ -39,6 +39,7 @@ namespace ariel
             print('\n'.join(map(''.join, r)))
         */
         // https://stackoverflow.com/questions/27370480/how-to-initialize-an-stdstring-with-a-length
+        // i talked to Erel and he recomanded me to do so
         std::string str(width * height, second_char);
 
         int b = width;
@@ -49,28 +50,32 @@ namespace ariel
         {
             for (size_t i = x; i < (a - x) && (a - x) > 0; ++i)
             {
-                str[(i * height) + y] = first_char;
-                str[(i * height) + (b - 1 - y)] = first_char;
+                // str[(i * width) + y] = first_char;
+                // str[(a * b) - 1 -  ((i * width) + y) ] = first_char;
+               
+
             }
+    
             for (size_t j = y; j < (b - y) && (b - y) > 0; ++j)
             {
                 if (x < a && j < b)
                 {
-                    str[(x * height) + j] = first_char;
-                    str[((a - 1 - x) * height) + j] = first_char;
+                //    str[(x * width) + j] = first_char;
+                //    str[(a*b)-1 - ((x * width) + j) ] = first_char;
                 }
             }
             x += 2;
             y += 2;
         }
+        
 
-        // print the array
+        // concat an output string with '\n' for human visualization :)
         std::string output;
         for (int i = 0; i < height; ++i)
         {
             for (int j = 0; j < width; ++j)
             {
-                output += str[i * height + j];
+                output += str[i * width + j];
             }
             output += '\n';
         }
