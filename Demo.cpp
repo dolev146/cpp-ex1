@@ -12,7 +12,7 @@
 using namespace std;
 
 int main() {
-	cout << ariel::mat(7, 21, '@', '-') << endl;
+	cout << ariel::mat(9, 3, '@', '-') << endl;
 /* Should print:
 @@@@@@@@@
 @-------@
@@ -22,26 +22,14 @@ int main() {
 @-------@
 @@@@@@@@@
 */
-
-/* bad numbers:
-	10
-	16
-	19
-	25
-	28
-	34
-	37
-	43
-	46
-	52
-
-
-
-
-
-
+	cout << ariel::mat(13, 5, '@', '-') << endl; 
+/* Should print:
+@@@@@@@@@@@@@
+@-----------@
+@-@@@@@@@@@-@
+@-----------@
+@@@@@@@@@@@@@
 */
-
 	try {
 		cout << ariel::mat(10, 5, '$', '%') << endl; // Exception - not a valid code
 	} catch (exception& ex) {
